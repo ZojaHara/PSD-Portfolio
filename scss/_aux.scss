@@ -1,0 +1,142 @@
+// animations
+
+@keyframes underline {
+  100% {
+    width:100%;
+  }
+}
+
+@keyframes opac {
+  100% {
+    opacity:1;
+  }
+}
+@keyframes opac2 {
+  100% {
+    opacity:.9;
+  }
+}
+
+// variables
+$roboto:'Roboto', sans-serif;
+$armor:'placid_armormedium';
+$dark: #0B161A;
+$blue: #57687C;
+$light:#D0DAE1;
+$intensive:#0D2350;
+$light:#A7C2E3;
+// $pink:#871267;
+$pink:#B97272;
+$grey:#E7E7E7;
+$grey2:#464646;
+
+// $bowlby:'Bowlby One SC', cursive;
+$bungee: 'Bungee Inline', cursive;
+$dosis: 'Dosis', sans-serif;
+$coda:'Coda', cursive;
+$roboto:'Roboto', sans-serif;
+
+
+
+
+$base: 1em; //= 3.333vmin
+$ratio: 1.5; // Perfect Fifth
+
+// 2. The formula for modular scale is (ratio^value)*base so we need a power function
+@function pow($number, $exponent) {
+ $value: 1;
+ @if $exponent > 0 {
+  @for $i from 1 through $exponent {
+   $value: $value * $number;
+  }
+}
+ @return $value;
+}
+
+@function ms($value, $ms-ratio: $ratio, $ms-base: $base){
+ $size: pow($ms-ratio, $value)*$ms-base;
+ @return $size;
+}
+
+// $phone:767px;
+// @mixin phone($phone:767px) {
+//   @media all and (max-width:$phone) {
+//     @content;
+//   }
+// }
+
+@mixin triangle($value1, $color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $value1 $value1 0 $value1;
+  border-color: $color transparent transparent transparent;
+}
+@mixin portrait {
+  @media all and (orientation:portrait) {
+    @content;
+  }
+}
+
+@mixin opacity($anim:opac, $time:.7s) {
+  opacity:0;
+  animation:$anim $time linear;
+  animation-fill-mode: forwards;
+}
+
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   520px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       769px,
+    "tablet-wide":  1024px,
+    "comp-small":   1200px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin enveloppe {
+  padding: 1em;
+  border: .5em solid transparent;
+background: linear-gradient(white, white) padding-box,
+            repeating-linear-gradient(-45deg, $pink 0, $pink 12.5%, transparent 0, transparent 25%,
+              $blue 0, $blue 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;
+
+  max-width: 20em;
+}
+
+@mixin scoop-corner {
+	// background: #58a;
+	background:	radial-gradient(circle at top left, transparent 15px, #58a 0) top left,
+	            radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
+	            radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom right,
+	            radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left;
+	background-size: 50% 50%;
+	background-repeat: no-repeat;
+
+	padding: 1em 1.2em;
+	max-width: 12em;
+	color: white;
+	font: 130%/1.6 Baskerville, Palatino, serif;
+}
+@mixin weave {
+  background:white
+radial-gradient(white 15%, transparent 16%) 0 0,
+radial-gradient(white 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+}
