@@ -3,23 +3,90 @@ a {
   text-decoration: none;
 }
 
+.hamb {
+  width:35px;
+  height:35px;
+  background:transparent;
+}
+  .hamburger {
+    @extend .hamb;
+    z-index: 20;
+    transition: all .5s;
+    position: fixed;
+    top: 8%;
+    right: 18%;
+    display: block;
+    .hamburger-dash {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: white;
+      transition:all .5s;
+      // border-radius: 10px;
+      // border:1.5px solid $dark;
+      &:nth-of-type(2) {
+        margin:9.5px 0;
+      }
+    }
+  }
 
+        .opacity {
+         opacity:0;
+       }
+       .rot1 {
+         transform-origin: right center;
+         transform:rotate(-45deg) translate(-.5px);
+       }
+       .rot2 {
+         transform-origin: right center;
+         transform:rotate(45deg) translate(.5px);
+       }
+       .move-nav {
+         transform:translateX(150%);
+       }
+      .hidden {
+        display:none;
+      }
+      // .move-hamb {
+      //   transform:translate(-50vmin);
+      // }
+
+      .centering {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+// --------------------------------------------------------------------------------
 body {
   font-family: $roboto;
   font-size: 16px;
 }
 .content-container {
-  display:flex;
-  align-items: center;
+  @extend .centering;
 }
 // Header section -----------------------------------------------------------------
 .main-header {
-  width:100vw;
+  width:100%;
   height:100vh;
   background:url("../pic/header-high.jpg");
   background-size: auto;
   position: relative;
   z-index: 10;
+  color: white;
+  font-size:1em;
+  @include mq("desktop-hd+", max) {
+    font-size: .8em;
+  };
+  @include mq("desktop-wide", max) {
+    font-size: .7em;
+  };
+  @include mq("desktop", max) {
+    font-size: .6em;
+  };
+  @include mq("tablet", max) {
+    font-size: .4em;
+  };
   &::before {
     content:"";
     position: absolute;
@@ -31,28 +98,33 @@ body {
   .header-parts {
     width:70%;
     height:90%;
-    margin:0 auto;
     position: relative;
-    color: white;
+    z-index: 15;
     display:flex;
     text-transform: uppercase;
+    // @include mq("desktop-wide", max) {
+    //   width:85%;
+    // };
     .header-part {
-      width:50%;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+
     }
   }
 }
       .heading-group {
+        width:50%;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
         .logo {
+          font-size: 20px;
+          color: white;
           border:2px solid white;
           border-radius:100%;
           padding:5px;
-          width:60px;
-          height:60px;
-          height: 60px;
-          line-height: 60px;
+          width:55px;
+          height:55px;
+          height: 55px;
+          line-height: 55px;
           text-align: center;
         }
         .main-heading {
@@ -63,7 +135,7 @@ body {
             &::before {
               content:"";
               width:2.85em;
-              height:.08em;
+              height:.077em;
               background:white;
               position: absolute;
               left:.07em;
@@ -73,7 +145,7 @@ body {
           .heading-words {
             font-weight:bold;
             &:nth-of-type(2) {
-              padding:.3em 0;
+              padding:.4em 0;
             }
             .crossed-through {
               font-weight:100;
@@ -91,22 +163,39 @@ body {
             }
           }
         }
-        .social-icons {
-
-        }
       }
 
       .nav-group {
-        .close-cross {
-          align-self: flex-end;
-        }
+        @extend .centering;
+        position: fixed;
+        right:15%;
+        top:5%;
+        height:90%;
+        width:35%;
+        transition: all .5s;
+        @include mq("comp-small", max) {
+          background:darken($grey, 5%);
+          width:70%;
+        };
         .main-nav {
           font-size: ms(2);
+          @include mq("comp-small", max) {
+            font-size: ms(3);
+          };
           .nav-list {
+            // margin-top:1em;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content:space-around;
+            @include mq("tablet-small", max) {
+              // margin-top: 2.5em;
+              // margin:0 auto;
+              flex-direction:column;
+            };
             .nav-item {
-              width:48%;
-              height:200px;
-              line-height: 200px;
+              width:8em;
+              height:6em;
+              line-height: 6em;
               display:inline-block;
               text-align:center;
               position: relative;
@@ -116,34 +205,42 @@ body {
                 &::after {
                   content:"";
                   position:absolute;
-                  bottom: 65px;
-                  left: 38%;
-                  width:24%;
+                  bottom: 2em;
+                  left: underline(8em, 2em);
+                  width:2em;
                   height:2px;
                   background:white;
                   transition:.5s all;
                 }
                 &:hover {
                   &::after {
-                    width:40%;
-                    transform:translate(-20px);
+                    width:3em;
+                    left:underline(8em, 3em);
                   }
                 }
               }
             }
           }
         }
+        // .equilibrum {
+        //   height:25px;
+        // }
       }
                   .social-icons {
                     width:250px;
                     .social-item {
-                      width:25px;
+                      width:18px;
                       margin-right:20px;
                       display: inline-block;
                       .social-link {
                         .social-img {
-                          height:25px;
+                          height:18px;
                         }
                       }
                     }
                   }
+// About me--------------------------------------------------------------------------------
+.about-me {
+  height:100vh;
+  background:grey;
+}

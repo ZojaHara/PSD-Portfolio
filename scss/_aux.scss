@@ -17,6 +17,7 @@
   }
 }
 
+
 // variables
 $roboto:'Roboto', sans-serif;
 $armor:'placid_armormedium';
@@ -25,9 +26,9 @@ $blue: #57687C;
 $light:#D0DAE1;
 $intensive:#0D2350;
 $light:#A7C2E3;
+$grey:#4D4E4F;
 // $pink:#871267;
 $pink:#B97272;
-$grey:#E7E7E7;
 $grey2:#464646;
 
 // $bowlby:'Bowlby One SC', cursive;
@@ -36,7 +37,11 @@ $dosis: 'Dosis', sans-serif;
 $coda:'Coda', cursive;
 $roboto:'Roboto', sans-serif;
 
-
+// Underline functions
+@function underline($parentWidth, $childWidth) {
+ $value: $parentWidth/2 - $childWidth/2;
+ @return $value;
+}
 
 
 $base: 1em; //= 3.333vmin
@@ -93,7 +98,8 @@ $breakpoints: (
     "tablet-wide":  1024px,
     "comp-small":   1200px,
     "desktop":      1248px,
-    "desktop-wide": 1440px
+    "desktop-wide": 1440px,
+    "desktop-hd+": 1700px
 );
 @mixin mq($width, $type: min) {
     @if map_has_key($breakpoints, $width) {
