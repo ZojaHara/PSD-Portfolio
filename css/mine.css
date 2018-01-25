@@ -22,8 +22,8 @@ a {
   z-index: 20;
   transition: all .5s;
   position: fixed;
-  top: 8%;
-  right: 18%;
+  top: 7%;
+  right: 15%;
   display: block; }
   .hamburger .hamburger-dash {
     display: block;
@@ -161,16 +161,20 @@ body {
   height: 90%;
   width: 35%;
   transition: all .5s; }
-  @media only screen and (max-width: 1199px) {
+  @media only screen and (max-width: 1023px) {
     .nav-group {
       background: #404142;
-      width: 70%; } }
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%; } }
   .nav-group .main-nav {
     font-size: 2.25em; }
-    @media only screen and (max-width: 1199px) {
+    @media only screen and (max-width: 1023px) {
       .nav-group .main-nav {
         font-size: 3.375em; } }
     .nav-group .main-nav .nav-list {
+      margin-top: 1em;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: wrap;

@@ -9,7 +9,6 @@ $(document).ready(function() {
   var ham3 = $('.hamburger-dash:nth-of-type(3)');
 
     hamburger.on('click', function() {
-      // $(this).toggleClass("move-hamb");
       ham1.toggleClass("rot1");
       ham2.toggleClass("opacity");
       ham3.toggleClass("rot2");
