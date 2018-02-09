@@ -70,7 +70,7 @@ body {
 
 .content-container {
   width: 70%;
-  height: 70%; }
+  margin: 12vmin 0; }
 
 .main-header {
   width: 100%;
@@ -222,7 +222,6 @@ body {
       height: 18px; }
 
 .about-me {
-  height: 90vh;
   background: #F7F7F1; }
 
 .section-header {
