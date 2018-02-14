@@ -1,6 +1,7 @@
 @import '_aux';
 a {
   text-decoration: none;
+  color:black;
 }
 // General-----------------------------------------------------------------
 .hamb {
@@ -8,6 +9,15 @@ a {
   height:35px;
   background:transparent;
 }
+.underline {
+  content:"";
+  position:absolute;
+  left: underline(8em, 2em);
+  width:2em;
+  height:2px;
+  transition:.5s all;
+}
+
   .hamburger {
     @extend .hamb;
     z-index: 20;
@@ -29,6 +39,46 @@ a {
       }
     }
   }
+
+
+  .heading-content {
+    .heading {
+      display:inline-block;
+      .heading-part {
+        display: block;
+        text-align: right;
+      }
+    }
+  }
+        .stroke {
+          letter-spacing: -3px;
+          display: inline-block;
+          padding:.2em;
+        }
+
+  .section-footer {
+    text-transform: uppercase;
+    font-weight: bold;
+    .footer-link {
+      display: block;
+      width: 8em;
+      margin:0 auto;
+      text-align:center;
+      position: relative;
+      &::after {
+        top: 1.5em;
+        background:black;
+        @extend .underline;
+      }
+      &:hover {
+        &::after {
+          width:3em;
+          left:underline(8em, 3em);
+        }
+      }
+    }
+  }
+
 
         .opacity {
          opacity:0;
@@ -63,14 +113,29 @@ body {
   font-size: 16px;
 }
 .container {
-  @extend .centering;
+  // @extend .centering;
 }
   .content-container {
     width:70%;
     // height:70%;
-    margin: 12vmin 0;
+    margin: 0 auto;
+    padding:14vmin 0;
   }
 // Header section -----------------------------------------------------------------
+
+.section-header {
+  text-align: center;
+  font-size: ms(3);
+  text-transform: uppercase;
+  padding-bottom:5%;
+  @include mq("tablet", max) {
+    font-size: ms(2);
+  }
+  @include mq("phone", max) {
+    font-size: ms(1);
+  }
+}
+
 .main-header {
   width:100%;
   height:100vh;
@@ -205,14 +270,9 @@ body {
                 color:white;
                 display:block;
                 &::after {
-                  content:"";
-                  position:absolute;
                   bottom: 2em;
-                  left: underline(8em, 2em);
-                  width:2em;
-                  height:2px;
                   background:white;
-                  transition:.5s all;
+                  @extend .underline;
                 }
                 &:hover {
                   &::after {
@@ -246,21 +306,6 @@ body {
   background:$lightGrey;
 }
 
-    .section-header {
-      text-align: center;
-      font-size: ms(3);
-      text-transform: uppercase;
-      padding-bottom:5%;
-      .heading-content {
-        .heading {
-          display:inline-block;
-          padding-left:.5%;
-        }
-        .stroke {
-          letter-spacing: -3px;
-        }
-      }
-    }
     .cv-container {
       position: relative;
       .my-photo {
@@ -284,4 +329,76 @@ body {
           right:0;
         }
       }
+    }
+
+    // -------------------------------------------------------------------------------------------
+    // Portfolio section
+
+    .gallery-container {
+      // padding:5vmin 0;
+      position: relative;
+      .img-height {
+        height:26vmin;
+      }
+      .img-container {
+        position: absolute;
+        &:nth-of-type(1), &:nth-of-type(3) {
+          left:0;
+        }
+        &:nth-of-type(2), &:nth-of-type(5) {
+          right:0;
+        }
+        &:nth-of-type(4), &:nth-of-type(6) {
+          right:33.33%;
+        }
+        &:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(6) {
+          width:47%;
+        }
+        &:nth-of-type(3),&:nth-of-type(4),&:nth-of-type(5) {
+          width:30%;
+        }
+        // &:nth-of-type(2) {
+        //   top:
+        // }
+        .portfolio-item {
+          position: absolute;
+          left:-5%;
+          top:5%;
+          .portfolio-title {
+            font-weight: bold;
+          }
+          .portfolio-subtitle {
+            text-transform:uppercase;
+          }
+        }
+        .portfolio-photo {
+          display: block;
+          width:100%;
+        }
+      }
+      // .item-position {
+      //   position: absolute;
+      //   &:nth-of-type(odd) {
+      //     left:0;
+      //   }
+      //   &:nth-of-type(even) {
+      //     right:0;
+      //   }
+      //   &:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(6) {
+      //     width:47%;
+      //   }
+      //   &:nth-of-type(2),&:nth-of-type(4),&:nth-of-type(5) {
+      //     width:30%%;
+      //   }
+      // }
+    }
+
+      // @for $i from 2 through 6 {
+      //   .img-container:nth-of-type(#{$i}) {
+      //     top:#{$i*13vmin - 13vmin + $i*2vmin};
+      //   }
+      // }
+
+    .section-footer {
+      position: relative;
     }
