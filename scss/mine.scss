@@ -337,82 +337,95 @@ body {
     .gallery-container {
       // padding:5vmin 0;
       position: relative;
-      height: 200vmin;
-      .img-height {
-        height:26vmin;
-      }
-      .img-container {
-        position: absolute;
-        // &:nth-of-type(1), &:nth-of-type(3) {
-        //   left:0;
-        // }
-        // &:nth-of-type(2), &:nth-of-type(5) {
-        //   right:0;
-        // }
-        // &:nth-of-type(4), &:nth-of-type(6) {
-        //   right:33.33%;
-        // }
-        &:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(6) {
-          width:47%;
+      // height: 200vmin;
+      display:flex;
+      .gallery-part {
+        display: flex;
+        flex-direction: column;
+        .img-height {
+          height:26vmin;
         }
-        &:nth-of-type(3),&:nth-of-type(4),&:nth-of-type(5) {
-          width:30%;
+        .img-less {
+          width:60%;
         }
-        &:nth-of-type(1) {
-          top:0;
-          left:0;
+        .img-more {
+          width:90%;
         }
-        &:nth-of-type(2) {
-          top:5%;
-          right:0;
-        }
-        &:nth-of-type(3) {
-          top:15%;
-          left:0;
-        }
-        &:nth-of-type(4) {
-          top:27%;
-          right:35%;
-        }
-        &:nth-of-type(5) {
-          top:41%;
-          right:0;
-        }
-        &:nth-of-type(6) {
-          top:57%;
-          right:33.33%;
-        }
-        .portfolio-item {
-          position: absolute;
-          left:-5%;
-          top:5%;
-          .portfolio-title {
-            font-weight: bold;
+        .img-container {
+          position: relative;
+          // width: 30%;
+          // &:nth-of-type(1), &:nth-of-type(3) {
+          //   left:0;
+          // }
+          // &:nth-of-type(2), &:nth-of-type(5) {
+          //   right:0;
+          // }
+          // &:nth-of-type(4), &:nth-of-type(6) {
+          //   right:33.33%;
+          // }
+
+          // &:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(6) {
+          //   width:47%;
+          // }
+          // &:nth-of-type(3),&:nth-of-type(4),&:nth-of-type(5) {
+          //   width:30%;
+          // }
+          // &:nth-of-type(1) {
+          //   top:0;
+          //   left:0;
+          // }
+          // &:nth-of-type(2) {
+          //   top:5%;
+          //   right:0;
+          // }
+          // &:nth-of-type(3) {
+          //   top:15%;
+          //   left:0;
+          // }
+          // &:nth-of-type(4) {
+          //   top:27%;
+          //   right:35%;
+          // }
+          // &:nth-of-type(5) {
+          //   top:41%;
+          //   right:0;
+          // }
+          // &:nth-of-type(6) {
+          //   top:57%;
+          //   right:33.33%;
+          // }
+          .portfolio-item {
+            position: absolute;
+            left:-5%;
+            top:5%;
+            .portfolio-title {
+              font-weight: bold;
+            }
+            .portfolio-subtitle {
+              text-transform:uppercase;
+            }
           }
-          .portfolio-subtitle {
-            text-transform:uppercase;
+          .portfolio-photo {
+            display: block;
+            width:100%;
           }
         }
-        .portfolio-photo {
-          display: block;
-          width:100%;
-        }
+        // .item-position {
+        //   position: absolute;
+        //   &:nth-of-type(odd) {
+        //     left:0;
+        //   }
+        //   &:nth-of-type(even) {
+        //     right:0;
+        //   }
+        //   &:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(6) {
+        //     width:47%;
+        //   }
+        //   &:nth-of-type(2),&:nth-of-type(4),&:nth-of-type(5) {
+        //     width:30%%;
+        //   }
+        // }
       }
-      // .item-position {
-      //   position: absolute;
-      //   &:nth-of-type(odd) {
-      //     left:0;
-      //   }
-      //   &:nth-of-type(even) {
-      //     right:0;
-      //   }
-      //   &:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(6) {
-      //     width:47%;
-      //   }
-      //   &:nth-of-type(2),&:nth-of-type(4),&:nth-of-type(5) {
-      //     width:30%%;
-      //   }
-      // }
     }
 
       // @for $i from 2 through 6 {
