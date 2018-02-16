@@ -56,9 +56,10 @@ a {
           padding:.2em;
         }
 
-  .section-footer {
+  .portfolio-footer {
     text-transform: uppercase;
     font-weight: bold;
+    position: relative;
     .footer-link {
       display: block;
       width: 8em;
@@ -333,6 +334,7 @@ body {
       position: relative;
       display:flex;
       justify-content: space-between;
+      padding:5em 0;
       // font-size: 20px;
       .gallery-part_2 {
         align-items: flex-end;
@@ -340,38 +342,45 @@ body {
       .gallery-part {
         display: flex;
         flex-direction: column;
+        width:50%;
         .img-height {
           height:26vmin;
         }
-        .img-less {
-          width:18em;
-        }
-        .img-more {
-          width:32em;
-        }
-        .img-container {
-          position: relative;
-          .portfolio-item {
-            position: absolute;
-            left:-5%;
-            top:5%;
-            .portfolio-title {
-              font-weight: bold;
-            }
-            .portfolio-subtitle {
-              text-transform:uppercase;
-            }
-          }
-          .portfolio-photo {
-            display: block;
-            width:100%;
-          }
-        }
       }
     }
+          .img-less {
+            width:60%;
+          }
+          .img-more {
+            width:95%;
+          }
+          // .img-less-flex {
+          //   width:35%;
+          // }
+          // .img-more-flex {
+          //   width:65%;
+          // }
+          .img-container {
+            position: relative;
+            .portfolio-item {
+              position: absolute;
+              left:-5%;
+              top:5%;
+              .portfolio-title {
+                font-weight: bold;
+              }
+              .portfolio-subtitle {
+                text-transform:uppercase;
+              }
+            }
+            .portfolio-photo {
+              display: block;
+              width:100%;
+            }
+          }
 
         .img-1 {
-          margin-top:5em;
+          // margin-top:5em;
         }
         .img-2 {
 
@@ -380,11 +389,10 @@ body {
           margin-top:7em;
         }
         .img-4 {
-          margin-left:45%;
-          margin-bottom:5em;
+          margin-top:7em;
         }
         .img-5 {
-          margin-top:10em;
+          margin-top:7em;
         }
         .img-6 {
           // margin-right:75%;
@@ -394,8 +402,19 @@ body {
           }
         }
         .img-7 {
-          margin-top:-10%;
+          margin-top:2em;
         }
+        .gallery-part-3 {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          width:50%;
+          height: 60%;
+          top:41%;
+          right: 35%;
+        }
+
 
       // @for $i from 2 through 6 {
       //   .img-container:nth-of-type(#{$i}) {
@@ -403,6 +422,6 @@ body {
       //   }
       // }
 
-    .section-footer {
-      position: relative;
+    .footer-margin {
+      margin-top:5em;
     }
