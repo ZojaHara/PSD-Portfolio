@@ -288,10 +288,7 @@ body {
 .gallery-container {
   position: relative;
   display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  padding: 5em 0; }
+  display: flex; }
   .gallery-container .gallery-part_2 {
     -ms-flex-align: end;
         align-items: flex-end; }
@@ -323,9 +320,20 @@ body {
   .img-container .portfolio-photo {
     display: block;
     width: 100%; }
+  .img-container .portfolio-png {
+    position: absolute; }
+
+.img-1 {
+  margin-top: 3em; }
+  .img-1 .portfolio-png {
+    width: 55%;
+    left: 25%; }
 
 .img-3 {
-  margin-top: 7em; }
+  margin-top: 5em; }
+  .img-3 .portfolio-png {
+    width: 25%;
+    left: 50%; }
 
 .img-4 {
   margin-top: 7em; }
@@ -336,7 +344,10 @@ body {
 .img-6 {
   margin-top: 3em; }
   .img-6 .portfolio-png {
-    position: absolute; }
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    top: 40%; }
 
 .img-7 {
   margin-top: 2em; }
@@ -355,4 +366,4 @@ body {
   right: 35%; }
 
 .footer-margin {
-  margin-top: 5em; }
+  margin-top: 10em; }
