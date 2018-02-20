@@ -333,9 +333,6 @@ body {
     .gallery-container {
       position: relative;
       display:flex;
-      // justify-content: space-between;
-      // padding:3em 0;
-      // font-size: 20px;
       .gallery-part_2 {
         align-items: flex-end;
       }
@@ -345,27 +342,60 @@ body {
         width:50%;
         .img-height {
           height:26vmin;
+          @include mq("tablet", max){
+            display: none;
+          }
+        }
+        @include mq("tablet", max){
+          width:100%;
+          align-items: center;
         }
       }
+      .gallery-part_2 {
+        align-items: flex-end;
+        @include mq("tablet", max){
+          align-items: center;
+        }
+      }
+      @include mq("tablet", max){
+        display: block;
+      }
     }
+
+      .gallery-part-3 {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width:50%;
+        height: 60%;
+        top:41%;
+        right: 35%;
+        @include mq("tablet", max){
+          position: static;
+          width:100%;
+          align-items: center;
+        }
+      }
+
           .img-less {
             width:60%;
           }
           .img-more {
             width:95%;
           }
-          // .img-less-flex {
-          //   width:35%;
-          // }
-          // .img-more-flex {
-          //   width:65%;
-          // }
           .img-container {
             position: relative;
+            transition: transform .5s;
+            &:hover {
+              transform: scale(1.03);
+            }
             .portfolio-item {
               position: absolute;
-              left:-5%;
-              top:5%;
+              @include mq("tablet-small", max){
+                position: static;
+                margin-bottom: .5em;
+              }
               .portfolio-title {
                 font-weight: bold;
               }
@@ -390,21 +420,40 @@ body {
           }
         }
         .img-2 {
-
+          .portfolio-item {
+            top:5%;
+            right:-22%;
+          }
+          @include mq("tablet", max){
+            margin:3em 0;
+          }
         }
         .img-3 {
           margin-top:5em;
           .portfolio-png {
             width:25%;
             left:50%;
-            // top:5%;
           }
         }
         .img-4 {
           margin-top:7em;
+          .portfolio-item {
+            top:5%;
+            left:-3%;
+          }
+          @include mq("tablet", max){
+            margin:3em 0;
+          }
         }
         .img-5 {
           margin-top:7em;
+          .portfolio-item {
+            top:5%;
+            left:-13%;
+          }
+          @include mq("tablet", max){
+            margin:3em 0;
+          }
         }
         .img-6 {
           margin-top:3em;
@@ -417,18 +466,23 @@ body {
         }
         .img-7 {
           margin-top:2em;
+          .portfolio-item {
+            top:42%;
+            left:-13%;
+          }
+          @include mq("tablet", max){
+            margin:3em 0;
+          }
         }
-        .gallery-part-3 {
-          position: absolute;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          width:50%;
-          height: 60%;
-          top:41%;
-          right: 35%;
+        .img-8 {
+          .portfolio-item {
+            bottom:5%;
+            left:-7%;
+          }
+          @include mq("tablet", max){
+            margin:3em 0;
+          }
         }
-
 
       // @for $i from 2 through 6 {
       //   .img-container:nth-of-type(#{$i}) {
@@ -438,4 +492,7 @@ body {
 
     .footer-margin {
       margin-top:10em;
+      @include mq("tablet", max){
+        margin-top:0em;
+      }
     }
