@@ -333,6 +333,9 @@ body {
     .gallery-container {
       position: relative;
       display:flex;
+      @include mq("tablet-wide", max){
+        display: block;
+      }
       .gallery-part_2 {
         align-items: flex-end;
       }
@@ -340,25 +343,23 @@ body {
         display: flex;
         flex-direction: column;
         width:50%;
+        height: 100%;
         .img-height {
           height:26vmin;
-          @include mq("tablet", max){
+          @include mq("tablet-wide", max){
             display: none;
           }
         }
-        @include mq("tablet", max){
+        @include mq("tablet-wide", max){
           width:100%;
           align-items: center;
         }
       }
       .gallery-part_2 {
         align-items: flex-end;
-        @include mq("tablet", max){
+        @include mq("tablet-wide", max){
           align-items: center;
         }
-      }
-      @include mq("tablet", max){
-        display: block;
       }
     }
 
@@ -371,7 +372,7 @@ body {
         height: 60%;
         top:41%;
         right: 35%;
-        @include mq("tablet", max){
+        @include mq("tablet-wide", max){
           position: static;
           width:100%;
           align-items: center;
@@ -387,6 +388,7 @@ body {
           .img-container {
             position: relative;
             transition: transform .5s;
+            height:100%;
             &:hover {
               transform: scale(1.03);
             }
@@ -422,9 +424,9 @@ body {
         .img-2 {
           .portfolio-item {
             top:5%;
-            right:-22%;
+            right:-24%;
           }
-          @include mq("tablet", max){
+          @include mq("tablet-wide", max){
             margin:3em 0;
           }
         }
@@ -441,7 +443,7 @@ body {
             top:5%;
             left:-3%;
           }
-          @include mq("tablet", max){
+          @include mq("tablet-wide", max){
             margin:3em 0;
           }
         }
@@ -451,7 +453,7 @@ body {
             top:5%;
             left:-13%;
           }
-          @include mq("tablet", max){
+          @include mq("tablet-wide", max){
             margin:3em 0;
           }
         }
@@ -470,7 +472,7 @@ body {
             top:42%;
             left:-13%;
           }
-          @include mq("tablet", max){
+          @include mq("tablet-wide", max){
             margin:3em 0;
           }
         }
@@ -479,7 +481,7 @@ body {
             bottom:5%;
             left:-7%;
           }
-          @include mq("tablet", max){
+          @include mq("tablet-wide", max){
             margin:3em 0;
           }
         }
@@ -492,7 +494,59 @@ body {
 
     .footer-margin {
       margin-top:10em;
-      @include mq("tablet", max){
+      @include mq("tablet-wide", max){
         margin-top:0em;
       }
     }
+
+    // -----------------------------------------------------------------
+    // Clients
+
+    .clients {
+      background:$lightGrey;
+      .clients-container {
+        display:flex;
+        justify-content: space-between;
+        @include mq("phablet", max) {
+          flex-direction: column;
+          margin-top:10%;
+        }
+        .clients-items {
+          width:31.2%;
+          height:100%;
+          @include mq("phablet", max) {
+            width:100%;
+          }
+        }
+      }
+    }
+      .client-icon-full {
+        width:100%;
+      }
+      .client-icon {
+        width:45%;
+        display:block;
+      }
+      .logo-margin {
+        margin:10% 0;
+      }
+      .twitter {
+        display: flex;
+        justify-content: space-between;
+      }
+      .apple {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .behance {
+        margin-top:20%;
+        @include mq("phablet", max) {
+          margin-top:10%;
+        }
+      }
+      .google {
+        margin-left:54%;
+        @include mq("phablet", max) {
+          margin-left:0;
+        }
+      }

@@ -289,6 +289,9 @@ body {
   position: relative;
   display: -ms-flexbox;
   display: flex; }
+  @media only screen and (max-width: 1023px) {
+    .gallery-container {
+      display: block; } }
   .gallery-container .gallery-part_2 {
     -ms-flex-align: end;
         align-items: flex-end; }
@@ -297,13 +300,14 @@ body {
     display: flex;
     -ms-flex-direction: column;
         flex-direction: column;
-    width: 50%; }
+    width: 50%;
+    height: 100%; }
     .gallery-container .gallery-part .img-height {
       height: 26vmin; }
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 1023px) {
         .gallery-container .gallery-part .img-height {
           display: none; } }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1023px) {
       .gallery-container .gallery-part {
         width: 100%;
         -ms-flex-align: center;
@@ -311,13 +315,10 @@ body {
   .gallery-container .gallery-part_2 {
     -ms-flex-align: end;
         align-items: flex-end; }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1023px) {
       .gallery-container .gallery-part_2 {
         -ms-flex-align: center;
             align-items: center; } }
-  @media only screen and (max-width: 768px) {
-    .gallery-container {
-      display: block; } }
 
 .gallery-part-3 {
   position: absolute;
@@ -331,7 +332,7 @@ body {
   height: 60%;
   top: 41%;
   right: 35%; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1023px) {
     .gallery-part-3 {
       position: static;
       width: 100%;
@@ -346,7 +347,8 @@ body {
 
 .img-container {
   position: relative;
-  transition: transform .5s; }
+  transition: transform .5s;
+  height: 100%; }
   .img-container:hover {
     -ms-transform: scale(1.03);
         transform: scale(1.03); }
@@ -374,9 +376,9 @@ body {
 
 .img-2 .portfolio-item {
   top: 5%;
-  right: -22%; }
+  right: -24%; }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1023px) {
   .img-2 {
     margin: 3em 0; } }
 
@@ -391,7 +393,7 @@ body {
   .img-4 .portfolio-item {
     top: 5%;
     left: -3%; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1023px) {
     .img-4 {
       margin: 3em 0; } }
 
@@ -400,7 +402,7 @@ body {
   .img-5 .portfolio-item {
     top: 5%;
     left: -13%; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1023px) {
     .img-5 {
       margin: 3em 0; } }
 
@@ -417,7 +419,7 @@ body {
   .img-7 .portfolio-item {
     top: 42%;
     left: -13%; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1023px) {
     .img-7 {
       margin: 3em 0; } }
 
@@ -425,12 +427,65 @@ body {
   bottom: 5%;
   left: -7%; }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1023px) {
   .img-8 {
     margin: 3em 0; } }
 
 .footer-margin {
   margin-top: 10em; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1023px) {
     .footer-margin {
       margin-top: 0em; } }
+
+.clients {
+  background: #F7F7F1; }
+  .clients .clients-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+    @media only screen and (max-width: 559px) {
+      .clients .clients-container {
+        -ms-flex-direction: column;
+            flex-direction: column;
+        margin-top: 10%; } }
+    .clients .clients-container .clients-items {
+      width: 31.2%;
+      height: 100%; }
+      @media only screen and (max-width: 559px) {
+        .clients .clients-container .clients-items {
+          width: 100%; } }
+
+.client-icon-full {
+  width: 100%; }
+
+.client-icon {
+  width: 45%;
+  display: block; }
+
+.logo-margin {
+  margin: 10% 0; }
+
+.twitter {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.apple {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end; }
+
+.behance {
+  margin-top: 20%; }
+  @media only screen and (max-width: 559px) {
+    .behance {
+      margin-top: 10%; } }
+
+.google {
+  margin-left: 54%; }
+  @media only screen and (max-width: 559px) {
+    .google {
+      margin-left: 0; } }
