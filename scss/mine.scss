@@ -12,7 +12,7 @@ a {
 .underline {
   content:"";
   position:absolute;
-  left: underline(8em, 2em);
+  // left: underline(12em, 2em);
   width:2em;
   height:2px;
   transition:.5s all;
@@ -56,13 +56,14 @@ a {
           padding:.2em;
         }
 
-  .portfolio-footer {
+  .section-footer {
     text-transform: uppercase;
     font-weight: bold;
     position: relative;
+    margin-top:1em;
     .footer-link {
       display: block;
-      width: 8em;
+      width: 12em;
       margin:0 auto;
       text-align:center;
       position: relative;
@@ -70,11 +71,12 @@ a {
         top: 1.5em;
         background:black;
         @extend .underline;
+        left: underline(12em, 2em);
       }
       &:hover {
         &::after {
           width:3em;
-          left:underline(8em, 3em);
+          left:underline(12em, 3em);
         }
       }
     }
@@ -229,7 +231,7 @@ body {
         right:15%;
         top:5%;
         height:90%;
-        width:35%;
+        width:30%;
         transition: all .5s;
         @include mq("tablet-wide", max) {
           background:darken($grey, 5%);
@@ -250,8 +252,6 @@ body {
             flex-wrap: wrap;
             justify-content:space-around;
             @include mq("tablet-small", max) {
-              // margin-top: 2.5em;
-              // margin:0 auto;
               width:100%;
               flex-direction:column;
             };
@@ -269,6 +269,7 @@ body {
                   bottom: 2em;
                   background:white;
                   @extend .underline;
+                  left: underline(8em, 2em);
                 }
                 &:hover {
                   &::after {
@@ -280,9 +281,6 @@ body {
             }
           }
         }
-        // .equilibrum {
-        //   height:25px;
-        // }
       }
                   .social-icons {
                     width:250px;
@@ -507,6 +505,7 @@ body {
       .clients-container {
         display:flex;
         justify-content: space-between;
+        margin-top:3em;
         @include mq("phablet", max) {
           flex-direction: column;
           margin-top:10%;
@@ -550,3 +549,92 @@ body {
           margin-left:0;
         }
       }
+
+      // -----------------------------------------------------------------
+      // Blog
+    .blog-container {
+      margin-top:3em;
+    }
+
+      .blog-items {
+        display:flex;
+        justify-content: space-between;
+        margin:5% 0;
+        @include mq("tablet-wide", max) {
+          flex-direction: column;
+          align-items: center;
+        }
+        .blog-long {
+          width:48%;
+          img {
+            width: 100%;
+          }
+          @include mq("tablet-wide", max) {
+            width:90%
+          }
+        }
+        .blog-short {
+          width:30%;
+          img {
+            width:100%;
+          }
+          @include mq("tablet-wide", max) {
+            width:70%
+          }
+        }
+        .blog-flex {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .blog-png {
+            display: block;
+            width:50%;
+            @include mq("tablet-wide", max) {
+              display: none;
+            }
+          }
+        }
+      }
+        .blog-article {
+          position: relative;
+          @include mq("tablet-wide", max) {
+            height:16.5em;
+            margin-top:2em;
+          }
+          .blog-date {
+            text-transform: uppercase;
+          }
+          .blog-header {
+            font-size: ms(1);
+            text-transform: uppercase;
+            margin: .5em 0;
+            .blog-heading {
+              font-weight: bold;
+            }
+          }
+          .blog-footer {
+            position: absolute;
+            bottom:0;
+            text-transform: uppercase;
+            padding:.3em 0;
+            border-bottom:.1em solid black;
+            @include mq("tablet-wide", max) {
+              position: static;
+              display: inline-block;
+              margin-top:.5em;
+            }
+          }
+          .content-short {
+            width:66%;
+            @include mq("tablet-wide", max) {
+              width:100%;
+            }
+          }
+        }
+
+    // -----------------------------------------------------------------
+    // Contact
+
+    .contact {
+      background: $lightGrey;
+    }

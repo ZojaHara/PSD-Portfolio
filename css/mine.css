@@ -19,10 +19,9 @@ a {
   height: 35px;
   background: transparent; }
 
-.underline, .portfolio-footer .footer-link::after, .nav-group .main-nav .nav-list .nav-item .nav-link::after {
+.underline, .section-footer .footer-link::after, .nav-group .main-nav .nav-list .nav-item .nav-link::after {
   content: "";
   position: absolute;
-  left: 3em;
   width: 2em;
   height: 2px;
   transition: .5s all; }
@@ -54,22 +53,24 @@ a {
   display: inline-block;
   padding: .2em; }
 
-.portfolio-footer {
+.section-footer {
   text-transform: uppercase;
   font-weight: bold;
-  position: relative; }
-  .portfolio-footer .footer-link {
+  position: relative;
+  margin-top: 1em; }
+  .section-footer .footer-link {
     display: block;
-    width: 8em;
+    width: 12em;
     margin: 0 auto;
     text-align: center;
     position: relative; }
-    .portfolio-footer .footer-link::after {
+    .section-footer .footer-link::after {
       top: 1.5em;
-      background: black; }
-    .portfolio-footer .footer-link:hover::after {
+      background: black;
+      left: 5em; }
+    .section-footer .footer-link:hover::after {
       width: 3em;
-      left: 2.5em; }
+      left: 4.5em; }
 
 .opacity {
   opacity: 0; }
@@ -207,7 +208,7 @@ body {
   right: 15%;
   top: 5%;
   height: 90%;
-  width: 35%;
+  width: 30%;
   transition: all .5s; }
   @media only screen and (max-width: 1023px) {
     .nav-group {
@@ -247,7 +248,8 @@ body {
           display: block; }
           .nav-group .main-nav .nav-list .nav-item .nav-link::after {
             bottom: 2em;
-            background: white; }
+            background: white;
+            left: 3em; }
           .nav-group .main-nav .nav-list .nav-item .nav-link:hover::after {
             width: 3em;
             left: 2.5em; }
@@ -443,7 +445,8 @@ body {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
-        justify-content: space-between; }
+        justify-content: space-between;
+    margin-top: 3em; }
     @media only screen and (max-width: 559px) {
       .clients .clients-container {
         -ms-flex-direction: column;
@@ -489,3 +492,80 @@ body {
   @media only screen and (max-width: 559px) {
     .google {
       margin-left: 0; } }
+
+.blog-container {
+  margin-top: 3em; }
+
+.blog-items {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin: 5% 0; }
+  @media only screen and (max-width: 1023px) {
+    .blog-items {
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-align: center;
+          align-items: center; } }
+  .blog-items .blog-long {
+    width: 48%; }
+    .blog-items .blog-long img {
+      width: 100%; }
+    @media only screen and (max-width: 1023px) {
+      .blog-items .blog-long {
+        width: 90%; } }
+  .blog-items .blog-short {
+    width: 30%; }
+    .blog-items .blog-short img {
+      width: 100%; }
+    @media only screen and (max-width: 1023px) {
+      .blog-items .blog-short {
+        width: 70%; } }
+  .blog-items .blog-flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center; }
+    .blog-items .blog-flex .blog-png {
+      display: block;
+      width: 50%; }
+      @media only screen and (max-width: 1023px) {
+        .blog-items .blog-flex .blog-png {
+          display: none; } }
+
+.blog-article {
+  position: relative; }
+  @media only screen and (max-width: 1023px) {
+    .blog-article {
+      height: 16.5em;
+      margin-top: 2em; } }
+  .blog-article .blog-date {
+    text-transform: uppercase; }
+  .blog-article .blog-header {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin: .5em 0; }
+    .blog-article .blog-header .blog-heading {
+      font-weight: bold; }
+  .blog-article .blog-footer {
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+    padding: .3em 0;
+    border-bottom: .1em solid black; }
+    @media only screen and (max-width: 1023px) {
+      .blog-article .blog-footer {
+        position: static;
+        display: inline-block;
+        margin-top: .5em; } }
+  .blog-article .content-short {
+    width: 66%; }
+    @media only screen and (max-width: 1023px) {
+      .blog-article .content-short {
+        width: 100%; } }
+
+.contact {
+  background: #F7F7F1; }
