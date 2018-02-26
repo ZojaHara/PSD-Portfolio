@@ -55,6 +55,18 @@ a {
           display: inline-block;
           padding:.2em;
         }
+        .logo {
+          font-size: 20px;
+          color: white;
+          border:2px solid white;
+          border-radius:100%;
+          padding:5px;
+          width:55px;
+          height:55px;
+          height: 55px;
+          line-height: 55px;
+          text-align: center;
+        }
 
   .section-footer {
     text-transform: uppercase;
@@ -175,18 +187,6 @@ body {
         display:flex;
         flex-direction:column;
         justify-content:space-between;
-        .logo {
-          font-size: 20px;
-          color: white;
-          border:2px solid white;
-          border-radius:100%;
-          padding:5px;
-          width:55px;
-          height:55px;
-          height: 55px;
-          line-height: 55px;
-          text-align: center;
-        }
         .main-heading {
           font-size:ms(4);
           .heading-words_folio {
@@ -286,13 +286,9 @@ body {
                     width:250px;
                     .social-item {
                       width:18px;
+                      height: 20px;
                       margin-right:20px;
                       display: inline-block;
-                      .social-link {
-                        .social-img {
-                          height:18px;
-                        }
-                      }
                     }
                   }
 // About me--------------------------------------------------------------------------------
@@ -637,4 +633,72 @@ body {
 
     .contact {
       background: $lightGrey;
+      .contact-container {
+        margin:4em 0;
+        display: flex;
+        @include mq("tablet-wide", max) {
+          flex-direction: column;
+          text-align: center;
+        }
+        .address-container {
+          width:30%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          @include mq("tablet-wide", max) {
+            width:100%;
+            align-items: center;
+          }
+          .social-margin {
+            @include mq("tablet-wide", max) {
+              margin:2em auto 6em;
+            }
+          }
+          .data-container {
+            .contact-heading {
+              text-transform: uppercase;
+              font-size: ms(1);
+              font-style: normal;
+              font-weight: bold;
+            }
+            .contact-data {
+              line-height: 2.5;
+              .contact-form {
+                text-transform: uppercase;
+                display:inline-block;
+                padding:.01em;
+                border-bottom:1px solid black;
+                line-height: 1.5;
+              }
+            }
+          }
+        }
+        .map-container {
+          width:70%;
+          height:29em;
+          @include mq("tablet-wide", max) {
+            width:100%;
+            height:20em;
+          }
+        }
+      }
     }
+// -----------------------------------------------------------------
+// Footer
+
+.site-footer {
+  height:35vmin;
+  background: url("../pic/footer-pic.jpg");
+  background-size: cover;
+  color:white;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .creator-data {
+    display: block;
+    &:nth-child(2) {
+      margin:1.5em 0 1em;
+    }
+  }
+}
