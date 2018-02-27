@@ -56,16 +56,27 @@ a {
           padding:.2em;
         }
         .logo {
-          font-size: 20px;
           color: white;
-          border:2px solid white;
           border-radius:100%;
           padding:5px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+        .logo-small {
           width:55px;
           height:55px;
           height: 55px;
           line-height: 55px;
-          text-align: center;
+          border:2.5px solid white;
+          font-size: 20px;
+        }
+        .logo-big {
+          width:70px;
+          height:70px;
+          height: 70px;
+          line-height: 70px;
+          border:4px solid white;
+          font-size: 22px;
         }
 
   .section-footer {
@@ -687,7 +698,7 @@ body {
 // Footer
 
 .site-footer {
-  height:35vmin;
+  height:20em;
   background: url("../pic/footer-pic.jpg");
   background-size: cover;
   color:white;
@@ -695,10 +706,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @include mq("tablet-wide", max) {
+    // height:40em;
+  }
   .creator-data {
     display: block;
     &:nth-child(2) {
-      margin:1.5em 0 1em;
+      margin:2em 0 1em;
     }
   }
 }
