@@ -23,7 +23,7 @@ a {
     z-index: 20;
     transition: all .5s;
     position: fixed;
-    top: 7%;
+    top: 10%;
     right: 15%;
     display: block;
     .hamburger-dash {
@@ -127,6 +127,33 @@ a {
       //   transform:translate(-50vmin);
       // }
 
+      .self-center {
+        // align-self: center;
+        // animation: alignCenter 1s linear;
+        // animation-fill-mode: forwards;
+        margin: 0 auto;
+      }
+      @keyframes alignCenter {
+        from {
+          align-self:flex-start;
+        }
+        to {
+          align-self: center;
+        }
+      }
+      .full-width {
+        animation: fullWidth 1s linear;
+        animation-fill-mode: forwards;
+      }
+      @keyframes fullWidth {
+        from {
+          width:auto;
+        }
+        to {
+          width:100%;
+        }
+      }
+
       .centering {
         display:flex;
         align-items: center;
@@ -183,10 +210,13 @@ body {
   @include mq("tablet", max) {
     font-size: .4em;
   };
+  @include mq("phone-wide", max) {
+    font-size: .3em;
+  };
     background:url("../pic/background.jpg");
   .header-parts {
     width:70%;
-    height:90%;
+    height:85%;
     position: relative;
     z-index: 15;
     display:flex;
@@ -194,12 +224,17 @@ body {
   }
 }
       .heading-group {
-        width:50%;
+        width:100%;
         display:flex;
         flex-direction:column;
         justify-content:space-between;
         .main-heading {
           font-size:ms(4);
+          transition:all 2s;
+          padding-left: 0;
+          @include mq("tablet", max) {
+            align-self: center;
+          };
           .heading-words_folio {
             padding-left: 2.45em;
             position: relative;
@@ -304,11 +339,10 @@ body {
         }
       }
                   .social-icons {
-                    width:250px;
                     .social-item {
                       width:18px;
                       height: 20px;
-                      margin-right:20px;
+                      margin-right:22px;
                       display: inline-block;
                     }
                   }

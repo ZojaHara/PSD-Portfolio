@@ -30,7 +30,7 @@ a {
   z-index: 20;
   transition: all .5s;
   position: fixed;
-  top: 7%;
+  top: 10%;
   right: 15%;
   display: block; }
   .hamburger .hamburger-dash {
@@ -117,6 +117,28 @@ a {
 .hidden {
   display: none; }
 
+.self-center {
+  margin: 0 auto; }
+
+@keyframes alignCenter {
+  from {
+    -ms-flex-item-align: start;
+        align-self: flex-start; }
+  to {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center; } }
+
+.full-width {
+  animation: fullWidth 1s linear;
+  animation-fill-mode: forwards; }
+
+@keyframes fullWidth {
+  from {
+    width: auto; }
+  to {
+    width: 100%; } }
+
 .centering, .nav-group {
   display: -ms-flexbox;
   display: flex;
@@ -168,9 +190,12 @@ body {
   @media only screen and (max-width: 768px) {
     .main-header {
       font-size: .4em; } }
+  @media only screen and (max-width: 519px) {
+    .main-header {
+      font-size: .3em; } }
   .main-header .header-parts {
     width: 70%;
-    height: 90%;
+    height: 85%;
     position: relative;
     z-index: 15;
     display: -ms-flexbox;
@@ -178,7 +203,7 @@ body {
     text-transform: uppercase; }
 
 .heading-group {
-  width: 50%;
+  width: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -186,7 +211,14 @@ body {
   -ms-flex-pack: justify;
       justify-content: space-between; }
   .heading-group .main-heading {
-    font-size: 5.0625em; }
+    font-size: 5.0625em;
+    transition: all 2s;
+    padding-left: 0; }
+    @media only screen and (max-width: 768px) {
+      .heading-group .main-heading {
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center; } }
     .heading-group .main-heading .heading-words_folio {
       padding-left: 2.45em;
       position: relative; }
@@ -275,13 +307,11 @@ body {
             width: 3em;
             left: 2.5em; }
 
-.social-icons {
-  width: 250px; }
-  .social-icons .social-item {
-    width: 18px;
-    height: 20px;
-    margin-right: 20px;
-    display: inline-block; }
+.social-icons .social-item {
+  width: 18px;
+  height: 20px;
+  margin-right: 22px;
+  display: inline-block; }
 
 .about-me {
   background: #F7F7F1; }
