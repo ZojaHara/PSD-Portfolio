@@ -9,53 +9,49 @@ $(document).ready(function() {
   var ham3 = $('.hamburger-dash:nth-of-type(3)');
 
   var mainHeading = $(".main-heading");
-  // var initialPos = mainHeading.css("padding-left");
   var newClick = true;
 
-  //
-  //
-  // var headingWidth = mainHeading.innerWidth();
-  // var groupWidth = $(".header-parts").innerWidth();
-  //
-  // console.log(groupWidth);
-  // console.log(headingWidth);
+  function showHamburger() {
+    ham1.toggleClass("rot1");
+    ham2.toggleClass("opacity");
+    ham3.toggleClass("rot2");
+  }
+  function hideHamburger() {
+    ham1.addClass("rot1");
+    ham2.addClass("opacity");
+    ham3.addClass("rot2");
+  }
 
-    hamburger.on('click', function() {
-      ham1.toggleClass("rot1");
-      ham2.toggleClass("opacity");
-      ham3.toggleClass("rot2");
-      nav.toggleClass('move-nav');
+  function elementPosition(value1, value2, unit, elem) {
+    if ($(window).width() > 1026){
+      var newPos = newClick ? value1+unit : value2+unit;
+        elem.animate({
+          paddingLeft: newPos
+        }, 100, "linear");
+        newClick = !newClick;
+    }
+  }
 
-
-      $(window).resize(function(){
-        if ($(window).width() <= 1023){
-          mainHeading.css("align-self","center");
-        } else {
-          mainHeading.css("align-self","flex-start");
-          if(nav.hasClass('move-nav')) {
-            nav.toggleClass('move-nav');
-          }
-        }
-
-
+  hamburger.on('click', function() {
+    showHamburger();
+    nav.toggleClass('move-nav');
+    elementPosition(35,0,"%",mainHeading);
+  });
+  
+  $(window).resize(function(){
+    if ($(window).width() <= 1025){
+      mainHeading.css({
+        "align-self":"center",
+        "paddingLeft":"0%"
       });
-      if ($(window).width() > 1024){
-        var newPos = newClick ? "35%" : "0%";
-
-          mainHeading.animate({
-            paddingLeft: newPos
-          }, 100, "linear");
-
-          newClick = !newClick;
-
-      }
-
-    });
+    } else {
+      mainHeading.css("align-self","flex-start");
+      nav.removeClass('move-nav');
+      hideHamburger();
+    }
+  });
 
 
-  //   $(window).resize(function(){
-  //     nav.removeClass('move-nav');
-  // });
 
   $('a[href*="#"]')
   // Remove links that don't actually link to anything
@@ -74,6 +70,8 @@ $(document).ready(function() {
       if (target.length) {
         // Only prevent default if animation is actually gonna happen
         event.preventDefault();
+        // nav.toggleClass('move-nav');
+
         $('html, body').animate({
           scrollTop: target.offset().top
         }, 500, function() {
@@ -87,8 +85,10 @@ $(document).ready(function() {
             $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
             $target.focus(); // Set focus again
           }
-
+// HERE Needs un improvements / not always working
+          showHamburger();
           nav.toggleClass('move-nav');
+          elementPosition(35,0,"%",mainHeading);
         });
       }
     }

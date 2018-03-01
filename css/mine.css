@@ -30,13 +30,13 @@ a {
   z-index: 20;
   transition: all .5s;
   position: fixed;
-  top: 10%;
-  right: 15%;
+  top: 7%;
+  right: 16%;
   display: block; }
   .hamburger .hamburger-dash {
     display: block;
     width: 100%;
-    height: 3px;
+    height: 4px;
     background: white;
     transition: all .5s; }
     .hamburger .hamburger-dash:nth-of-type(2) {
@@ -101,14 +101,14 @@ a {
 .rot1 {
   -ms-transform-origin: right center;
       transform-origin: right center;
-  -ms-transform: rotate(-45deg) translate(-0.5px);
-      transform: rotate(-45deg) translate(-0.5px); }
+  -ms-transform: rotate(-45deg) translate(-2px);
+      transform: rotate(-45deg) translate(-2px); }
 
 .rot2 {
   -ms-transform-origin: right center;
       transform-origin: right center;
-  -ms-transform: rotate(45deg) translate(0.5px);
-      transform: rotate(45deg) translate(0.5px); }
+  -ms-transform: rotate(45deg) translate(0.1px);
+      transform: rotate(45deg) translate(0.1px); }
 
 .move-nav {
   -ms-transform: translateX(150%);
@@ -116,28 +116,6 @@ a {
 
 .hidden {
   display: none; }
-
-.self-center {
-  margin: 0 auto; }
-
-@keyframes alignCenter {
-  from {
-    -ms-flex-item-align: start;
-        align-self: flex-start; }
-  to {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center; } }
-
-.full-width {
-  animation: fullWidth 1s linear;
-  animation-fill-mode: forwards; }
-
-@keyframes fullWidth {
-  from {
-    width: auto; }
-  to {
-    width: 100%; } }
 
 .centering, .nav-group {
   display: -ms-flexbox;
@@ -214,7 +192,7 @@ body {
     font-size: 5.0625em;
     transition: all 2s;
     padding-left: 0; }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1023px) {
       .heading-group .main-heading {
         -ms-flex-item-align: center;
             -ms-grid-row-align: center;
@@ -643,7 +621,7 @@ body {
               align-items: center; } }
       @media only screen and (max-width: 1023px) {
         .contact .contact-container .address-container .social-margin {
-          margin: 2em auto 6em; } }
+          margin: 4em auto; } }
       .contact .contact-container .address-container .data-container .contact-heading {
         text-transform: uppercase;
         font-size: 1.5em;
