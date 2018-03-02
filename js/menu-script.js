@@ -33,10 +33,15 @@ $(document).ready(function() {
   }
 
   hamburger.on('click', function() {
+    elementPosition(35,0,"%",mainHeading);
     showHamburger();
     nav.toggleClass('move-nav');
-    elementPosition(35,0,"%",mainHeading);
   });
+
+  if ($(window).width() <= 1024){
+    nav.addClass("move-nav");
+    showHamburger();
+  }
 
   $(window).resize(function(){
     if ($(window).width() <= 1024){
@@ -44,10 +49,19 @@ $(document).ready(function() {
         "align-self":"center",
         "paddingLeft":"0%"
       });
-    } else {
-      mainHeading.css("align-self","flex-start");
-      nav.removeClass('move-nav');
-      hideHamburger();
+      // nav.addClass('move-nav');
+    }
+    else {
+      mainHeading.css({
+        "align-self":"flex-start",
+      });
+      if(nav.hasClass("move-nav")) {
+        mainHeading.css("padding-left", "35%");
+      } else {
+        mainHeading.css("padding-left", "0%");
+      }
+      // nav.addClass('move-nav');
+      // showHamburger();
     }
   });
 // BACKGROUND COLOR NAVIGATION change
