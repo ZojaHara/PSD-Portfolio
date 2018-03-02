@@ -23,7 +23,7 @@ a {
     z-index: 20;
     transition: all .5s;
     position: fixed;
-    top: 5%;
+    top: 8.5%;
     right: 15%;
     display: block;
     padding: 12px;
@@ -256,8 +256,8 @@ body {
         @extend .centering;
         position: fixed;
         right:15%;
-        top:5%;
-        height:90%;
+        top:8.5%;
+        height:85%;
         width:30%;
         transition: all .5s;
         @include mq("tablet-wide", max) {
@@ -274,7 +274,6 @@ body {
           };
           .nav-list {
             width:16em;
-            margin-top:1em;
             display:flex;
             flex-wrap: wrap;
             justify-content:space-around;
@@ -582,9 +581,21 @@ body {
         display:flex;
         justify-content: space-between;
         margin:5% 0;
+        &:hover {
+          .blog-pic{
+            filter: grayscale(0);
+          }
+          .blog-footer {
+            font-size: 1.2em;
+          }
+        }
         @include mq("tablet-wide", max) {
           flex-direction: column;
           align-items: center;
+        }
+        .blog-pic {
+          filter:grayscale(100%);
+          transition: all .5s;
         }
         .blog-long {
           width:48%;
@@ -640,6 +651,7 @@ body {
             text-transform: uppercase;
             padding:.3em 0;
             border-bottom:.1em solid black;
+            transition: all .2s;
             @include mq("tablet-wide", max) {
               position: static;
               display: inline-block;
