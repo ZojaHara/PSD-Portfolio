@@ -23,7 +23,7 @@ $(document).ready(function() {
   }
 
   function elementPosition(value1, value2, unit, elem) {
-    if ($(window).width() > 1026){
+    if ($(window).width() > 1024){
       var newPos = newClick ? value1+unit : value2+unit;
         elem.animate({
           paddingLeft: newPos
@@ -37,9 +37,9 @@ $(document).ready(function() {
     nav.toggleClass('move-nav');
     elementPosition(35,0,"%",mainHeading);
   });
-  
+
   $(window).resize(function(){
-    if ($(window).width() <= 1025){
+    if ($(window).width() <= 1024){
       mainHeading.css({
         "align-self":"center",
         "paddingLeft":"0%"
@@ -50,9 +50,27 @@ $(document).ready(function() {
       hideHamburger();
     }
   });
+// BACKGROUND COLOR NAVIGATION change
 
+  $(window).on("scroll", function(){
+    if($(this).scrollTop() > 300) {
+      nav.css({
+        "background":"rgba(64,65,66,.8)",
+      });
+      hamburger.css({
+        "background":"rgba(64,65,66,.6)",
+      });
+    } else {
+      nav.css({
+        "background":"",
+      });
+      hamburger.css({
+        "background":"",
+      });
+    }
+  });
 
-
+// SMOOTH LINKS SCROLLING
   $('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')

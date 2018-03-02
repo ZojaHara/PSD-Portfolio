@@ -15,8 +15,8 @@ a {
   color: black; }
 
 .hamb, .hamburger {
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
   background: transparent; }
 
 .underline, .section-footer .footer-link::after, .nav-group .main-nav .nav-list .nav-item .nav-link::after {
@@ -30,13 +30,14 @@ a {
   z-index: 20;
   transition: all .5s;
   position: fixed;
-  top: 7%;
-  right: 16%;
-  display: block; }
+  top: 5%;
+  right: 15%;
+  display: block;
+  padding: 12px; }
   .hamburger .hamburger-dash {
     display: block;
     width: 100%;
-    height: 4px;
+    height: 5px;
     background: white;
     transition: all .5s; }
     .hamburger .hamburger-dash:nth-of-type(2) {

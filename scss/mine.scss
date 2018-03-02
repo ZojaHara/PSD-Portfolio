@@ -5,8 +5,8 @@ a {
 }
 // General-----------------------------------------------------------------
 .hamb {
-  width:35px;
-  height:35px;
+  width:38px;
+  height:38px;
   background:transparent;
 }
 .underline {
@@ -23,13 +23,14 @@ a {
     z-index: 20;
     transition: all .5s;
     position: fixed;
-    top: 7%;
-    right: 16%;
+    top: 5%;
+    right: 15%;
     display: block;
+    padding: 12px;
     .hamburger-dash {
       display: block;
       width: 100%;
-      height: 4px;
+      height: 5px;
       background: white;
       transition:all .5s;
       // border-radius: 10px;

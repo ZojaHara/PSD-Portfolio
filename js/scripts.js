@@ -1,12 +1,16 @@
 ;(function($) {
 
-  // $(window).on("scroll", function() {
-  //   console.log($(window).scrollTop);
-  //
-  //   if( $(window).scrollTop > 200) {
-  //     $(".nav-group").css("background","black");
-  //   }
-  // });
-
+// $(window).on("scroll", function(){
+//   if($(this).scrollTop() > 300) {
+//     $(".nav-group, .hamburger").css({
+//       "background":"#404142",
+//       "opacity":.85
+//     });
+//   } else {
+//     $(".nav-group, .hamburger").css({
+//       "background":""
+//     });
+//   }
+// });
 
 })(jQuery);
