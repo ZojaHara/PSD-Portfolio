@@ -313,7 +313,8 @@ body {
       color: blue;
       position: absolute;
       bottom: 0%;
-      right: 0; }
+      right: 0;
+      cursor: pointer; }
 
 .gallery-container {
   position: relative;
