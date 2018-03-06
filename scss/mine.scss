@@ -325,23 +325,38 @@ body {
       position: relative;
       .my-photo {
         width:60%;
+        @include mq("tablet-wide",max) {
+          display:block;
+          width:100%;
+          margin:2em 0;
+        }
       }
       .cv {
         font-family: Times New Roman;
         width:40%;
-        height:24%;
-        padding:.5%;
+        // height:24%;
+        padding:2%;
         overflow:hidden;
         position: absolute;
         top: 10%;
         left:50%;
         font-size: ms(1);
         line-height: 1.3;
+        z-index: 5;
+        transition: 1s all;
+        background:rgba(247,247,241,0);
+        box-sizing: border-box;
+        @include mq("tablet-wide",max) {
+          width:100%;
+          // height:10vmin;
+          position: relative;
+          left:0;
+        }
         .roll-up {
           color:blue;
-          position:absolute;
-          bottom:0%;
-          right:0;
+          // position:absolute;
+          // bottom:0%;
+          // right:0;
           cursor: pointer;
         }
       }

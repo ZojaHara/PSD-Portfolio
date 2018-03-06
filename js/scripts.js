@@ -1,18 +1,21 @@
 ;(function($) {
 
   var cv = $(".cv");
-  var rollUp = $(".roll-up");
+  var rollUp = $('<span class="roll-up">(+)</span>');
   var click = true;
 
-  rollUp.on("click", function() {
-    var val1 = click ? "50%" : "40%";
-    var val2 = click ? "120%" : "20%";
-    cv.animate( {
-      width:val1,
-      height:val2
-    }, 2000);
+  var textContent = cv.text();
+  var textFragment = textContent.slice(0,200);
+  cv.text(textFragment);
+  cv.append(rollUp);
 
-    click=!click;
+  cv.on("click", rollUp, function() {
+    var textNewContent = click ? textContent : textFragment;
+    var opac = click ? "rgba(247,247,241,.8)" : "rgba(247,247,241,0)";
+
+    $(this).text(textNewContent).css("background", opac);
+    $(this).append(rollUp);
+    click = !click;
   });
 
 })(jQuery);

@@ -59,14 +59,8 @@ $(document).ready(function() {
       mainHeading.css({
         "align-self":"flex-start",
       });
-      // if(nav.hasClass("move-nav")) {
-      //   mainHeading.css("padding-left", "35%");
-      // } else {
-      //   mainHeading.css("padding-left", "0%");
-      // }
       nav.removeClass("move-nav");
       hideHamburger();
-
     }
   });
 // BACKGROUND COLOR NAVIGATION change
