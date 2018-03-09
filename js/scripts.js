@@ -11,7 +11,7 @@
 
   cv.on("click", rollUp, function() {
     var textNewContent = click ? textContent : textFragment;
-    var opac = click ? "rgba(247,247,241,.8)" : "rgba(247,247,241,0)";
+    var opac = click ? "rgba(247,247,241,.9)" : "rgba(247,247,241,0)";
 
     $(this).text(textNewContent).css("background", opac);
     $(this).append(rollUp);
